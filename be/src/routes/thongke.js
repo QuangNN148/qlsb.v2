@@ -4,18 +4,18 @@ const db = require('../database');
 
 // GET /api/thong-ke?type=thang&year=2025
 router.get('/', (req, res) => {
-    const { type, year } = req.query;
+    const { kieu, year } = req.query;
 
     // Kiểm tra giá trị type hợp lệ
-    if (!['thang', 'quy', 'nam'].includes(type)) {
+    if (!['thang', 'quy', 'nam'].includes(kieu)) {
         return res.status(400).json({ error: 'Invalid type' });
     }
 
     // Xác định cách nhóm dữ liệu
     let groupBy;
-    if (type === 'thang') {
+    if (kieu === 'thang') {
         groupBy = "strftime('%Y-%m', ngay_thanh_toan)";
-    } else if (type === 'quy') {
+    } else if (kieu === 'quy') {
         groupBy = "strftime('%Y', ngay_thanh_toan) || '-Q' || ((cast(strftime('%m', ngay_thanh_toan) as integer)-1)/3 + 1)";
     } else {
         groupBy = "strftime('%Y', ngay_thanh_toan)";

@@ -10,7 +10,7 @@ app.use(express.json());
 app.use('/api/thong-ke', thongKeRoutes);
 app.use('/api/thong-ke/chi-tiet', chiTietRoutes);
 
-const PORT = 3000;
+const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`🚀 Server đang chạy tại http://localhost:${PORT}`);
 });
