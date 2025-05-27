@@ -26,10 +26,10 @@
 - HT hiện bảng thống kê theo tháng theo chiều thời gian từ gần nhất đến xa nhất so với hiện tại
 |Thời gian|Doanh thu|
 |---------|---------|
-|Q2/2025|2.000.000|
-|------|---------|
-|Q1/2025|1.000.000|
-|------|-------|
+|Q2/2025  |2.000.000|
+|---------|---------|
+|Q1/2025  |1.000.000|
+|---------|---------|
 - QL nhấp chọn dòng Q2/2025
 - Truy vấn API dự kiến: http://localhost:3000/api/thong-ke/chi-tiet?type=quy&quater=Q2&year=2025
 - HT hiện bảng danh sách chi tiết các hoá đơn trong thời gian Q2/2025
