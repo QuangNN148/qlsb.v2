@@ -3,6 +3,7 @@ const cors = require('cors');
 const thongKeRoutes = require('./routes/thongke');
 const chiTietRoutes = require('./routes/chitiet');
 const datSanRoutes = require('./routes/datsan');
+const thanhToanRoutes = require('./routes/thanhtoan');
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use('/api/thong-ke', thongKeRoutes);
 app.use('/api/thong-ke/chi-tiet', chiTietRoutes);
 app.use('/api/dat-san',datSanRoutes);
+app.use('/api/thanh-toan', thanhToanRoutes);
 
 const PORT = 3001;
 app.listen(PORT, () => {

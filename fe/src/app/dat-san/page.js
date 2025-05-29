@@ -156,7 +156,7 @@ export default function DatSan() {
                   <label className="block text-sky-800 font-medium mb-2">Loại sân:</label>
                   <input
                     type="text"
-                    placeholder="VD: 5v5, 7v7"
+                    placeholder="VD: mini,..."
                     value={loaiSan}
                     onChange={(e) => setLoaiSan(e.target.value)}
                     className="w-full p-3 border border-sky-200 rounded-lg bg-white/70 focus:ring-2 focus:ring-sky-400 focus:border-sky-400 transition duration-150 ease-in-out"

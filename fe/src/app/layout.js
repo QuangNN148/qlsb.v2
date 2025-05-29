@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Thống Kê Doanh Thu',
-  description: 'Ứng dụng thống kê doanh thu sân bóng',
+  title: 'Quản Lý Sân Bóng',
+  description: 'Ứng dụng quản lý sân bóng',
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +17,16 @@ export default function RootLayout({ children }) {
             <h1 className="text-xl font-bold">Quản Lý Sân Bóng</h1>
             <ul className="flex space-x-4">
               <li>
-                <a href="/" className="hover:underline">Thống Kê Doanh Thu</a>
+                <a href="/" className="hover:underline">Trang Chủ</a>
+              </li>
+              <li>
+                <a href="/dat-san" className="hover:underline">Đặt Sân</a>
+              </li>
+              <li>
+                <a href="/thanh-toan" className="hover:underline">Thanh Toán</a>
+              </li>
+              <li>
+                <a href="/thong-ke" className="hover:underline">Thống Kê Doanh Thu</a>
               </li>
             </ul>
           </div>
