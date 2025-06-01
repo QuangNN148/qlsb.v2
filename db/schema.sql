@@ -11,8 +11,9 @@ CREATE TABLE khach_hang (
 CREATE TABLE san_bong (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     ten_san TEXT NOT NULL,
-    loai_san TEXT,
-    mo_ta TEXT
+    loai_san TEXT CHECK(loai_san IN ('7','11')),
+    mo_ta TEXT,
+    gia_thue_theo_gio REAL
 );
 
 CREATE TABLE phieu_dat_san (
@@ -28,10 +29,13 @@ CREATE TABLE chi_tiet_dat_san (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     phieu_dat_san_id INTEGER NOT NULL,
     san_bong_id INTEGER NOT NULL,
-    khung_gio TEXT NOT NULL, -- eg: "17:00-19:00"
+    gio_bat_dau TEXT NOT NULL, -- giờ bắt đầu (HH:mm)
+    gio_ket_thuc TEXT NOT NULL, -- giờ kết thúc (HH:mm)
     ngay_bat_dau DATE NOT NULL,
     ngay_ket_thuc DATE NOT NULL,
-    gia_thue_mot_buoi REAL,
+    gia_thue_theo_gio REAL,
+    gio_nhan_san TEXT, -- giờ nhận sân thực tế (ISO string hoặc HH:mm)
+    gio_tra_san TEXT,  -- giờ trả sân thực tế (ISO string hoặc HH:mm)
     FOREIGN KEY (phieu_dat_san_id) REFERENCES phieu_dat_san(id),
     FOREIGN KEY (san_bong_id) REFERENCES san_bong(id)
 );
@@ -41,6 +45,7 @@ CREATE TABLE hoa_don (
     phieu_dat_san_id INTEGER NOT NULL,
     ngay_thanh_toan DATE NOT NULL,
     tong_tien REAL,
+    tien_thue_san REAL, -- tổng tiền thuê sân (không gồm mặt hàng)
     so_tien_thuc_tra REAL,
     so_tien_con_lai REAL,
     FOREIGN KEY (phieu_dat_san_id) REFERENCES phieu_dat_san(id)
