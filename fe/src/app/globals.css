@@ -19,37 +19,3 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-@media print {
-  body {
-    background: none;
-  }
-
-  nav,
-  button:not([data-print]),
-  .no-print {
-    display: none !important;
-  }
-
-  .bg-white\/50,
-  .bg-white\/70,
-  .bg-white\/80,
-  .bg-sky-50\/50,
-  .bg-gradient-to-br {
-    background: white !important;
-  }
-
-  * {
-    print-color-adjust: exact !important;
-    -webkit-print-color-adjust: exact !important;
-  }
-
-  table {
-    break-inside: avoid;
-  }
-  
-  @page {
-    margin: 2cm;
-    size: auto;
-  }
-}
